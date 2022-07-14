@@ -63,7 +63,7 @@ jobs:
     - name: Clone source code
       env: 
         REPO_URL: https://github.com/Lienol/openwrt
-        REPO_BRANCH: master
+        REPO_BRANCH: 21.02
       run: |
         git clone --depth 1 $REPO_URL -b $REPO_BRANCH openwrt
         
@@ -71,21 +71,6 @@ jobs:
       run: |
         cd openwrt
         sed -i '$a src-git NueXini_Packages https://github.com/NueXini/NueXini_Packages.git' feeds.conf.default
-
-        
-    - name: in package
-      run: |
-        cd openwrt/package
-        git clone https://github.com/aa65535/openwrt-redsocks2.git
-        mkdir lean
-        cd lean
-        git clone https://github.com/jerrykuku/lua-maxminddb.git  #git lua-maxminddb 依赖
-        git clone https://github.com/jerrykuku/luci-app-vssr.git
-        git clone https://github.com/jerrykuku/luci-app-jd-dailybonus.git
-        cd ..
-        cd ..
-        
-
         
     - name: Update & Install feeds
       working-directory: ./openwrt
