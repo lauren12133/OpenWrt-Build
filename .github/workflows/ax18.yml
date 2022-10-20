@@ -76,7 +76,7 @@ jobs:
       run: |
         cd openwrt
         rm -rf  target/linux/ipq60xx/files-4.4/arch/arm64/boot/dts/qcom/qcom-ipq6000-cpu-opp.dtsi
-        wget https://raw.githubusercontent.com/lauren12133/OpenWrt-Build/main/ax18cpupath/qcom-ipq6000-cpu-opp.dtsi
+        wget https://raw.githubusercontent.com/lauren12133/OpenWrt-Build/main/ax18cpupath/qcom-ipq6000-cpu-opp.dtsi >target/linux/ipq60xx/files-4.4/arch/arm64/boot/dts/qcom/qcom-ipq6000-cpu-opp.dtsi
 
         
     - name: Update & Install feeds
