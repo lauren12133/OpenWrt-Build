@@ -83,8 +83,12 @@ jobs:
       working-directory: ./openwrt
       run: |
         ./scripts/feeds update -a
+        pushd feeds/packages/lang
+        rm -fr golang && svn co https://github.com/openwrt/packages/trunk/lang/golang
+        popd
         ./scripts/feeds install -a
         ./scripts/feeds install -a
+        
         
     #- name: openclash Install rely
       #run: |
