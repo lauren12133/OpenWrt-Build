@@ -6,7 +6,7 @@
 # Youtube Channel: https://goo.gl/fvkdwm 
 #=================================================
 
-name: ax18
+name: ipq6000-pro
 
 on: 
   release:
@@ -17,10 +17,10 @@ on:
       #- master
 
   #schedule:
-  #  - cron: 0 8 * * 5
+    #- cron: 0 20 1 * *
   
   watch:
-    types: [started]
+   types: [started]
   
 
 jobs:
@@ -70,16 +70,27 @@ jobs:
     - name: Update feeds.conf.default
       run: |
         cd openwrt
-        sed -i '$a src-git NueXini_Packages https://github.com/NueXini/NueXini_Packages.git' feeds.conf.default
         git clone https://github.com/nixonli/ddns-scripts_dnspod.git package/ddns-scripts_dnspod
-        
         
     - name: Update path
       run: |
-        cd openwrt/target/linux/ipq60xx/files-4.4/arch/arm64/boot/dts/qcom/
-        rm -rf qcom-ipq6000-cpu-opp.dtsi
-        wget https://raw.githubusercontent.com/lauren12133/OpenWrt-Build/main/ax18cpupath/qcom-ipq6000-cpu-opp.dtsi
-        cat qcom-ipq6000-cpu-opp.dtsi
+        cd openwrt
+        curl https://raw.githubusercontent.com/lauren12133/OpenWrt-Build/main/ax18cpupath/path.sh | bash
+        
+        cat target/linux/ipq60xx/files-4.4/arch/arm64/boot/dts/qcom/qcom-ipq6000-cpu-opp.dtsi
+        echo "cpu freq"    
+        
+        cat target/linux/ipq60xx/Makefile
+        echo "drv-bridge-mgr"
+        
+        cat package/network/services/dnsmasq/files/dhcp.conf
+        echo "aaaa"
+        
+        cat package/kernel/linux/files/sysctl-nf-conntrack.conf
+        echo "65535"
+        
+        cat package/qca/qca-nss-ecm/files/qca-nss-ecm.init
+        echo "1>0"
         
     - name: Update & Install feeds
       working-directory: ./openwrt
@@ -110,7 +121,7 @@ jobs:
 
     - name: Configuration Customization - ax18
       env:
-        CONFIG_FILE: 'ax18.config'
+        CONFIG_FILE: 'pro.config'
       run: |
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
         #chmod +x ./customize.sh && ./customize.sh
