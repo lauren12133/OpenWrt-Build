@@ -6,7 +6,7 @@
  
 #添加桥管理
  rm -rf target/linux/ipq60xx/Makefile
- wget -P target/linux/ipq60xx/Makefile/ https://raw.githubusercontent.com/lauren12133/OpenWrt-Build/main/ax18cpupath/Makefile
+ wget -P target/linux/ipq60xx/ https://raw.githubusercontent.com/lauren12133/OpenWrt-Build/main/ax18cpupath/Makefile
 
 #dnsmasq：默认不过滤 AAAA 记录
  rm -rf package/network/services/dnsmasq/files/dhcp.conf
