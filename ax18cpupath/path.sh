@@ -1,8 +1,8 @@
 #!/bin/bash
 
 #更新feeds.conf.default
- rm -rf feeds.conf.default
- wget https://raw.githubusercontent.com/lauren12133/OpenWrt-Build/main/ax18cpupath/feeds.conf.default
+ #rm -rf feeds.conf.default
+ #wget https://raw.githubusercontent.com/lauren12133/OpenWrt-Build/main/ax18cpupath/feeds.conf.default
  
 #调整CPU频率
  rm -rf target/linux/ipq60xx/files-4.4/arch/arm64/boot/dts/qcom/qcom-ipq6000-cpu-opp.dtsi
