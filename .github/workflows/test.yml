@@ -6,8 +6,7 @@
 # Youtube Channel: https://goo.gl/fvkdwm 
 #=================================================
 
-name: ipq6000-pro
-
+name: test
 on: 
   release:
     types: [published]
@@ -118,7 +117,6 @@ jobs:
     - name: Build firmware
       working-directory: ./openwrt
       run: |
-        make package/feeds/luci/luci-base/compile V=99
         make -j2 V=s
 
     - name : Upload artifact
