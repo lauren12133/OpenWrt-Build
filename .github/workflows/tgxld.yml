@@ -6,7 +6,7 @@
 # Youtube Channel: https://goo.gl/fvkdwm 
 #=================================================
 
-name: lean - x86
+name: lean - x86 - test
 
 on: 
   release:
