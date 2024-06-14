@@ -72,6 +72,7 @@ jobs:
         cd openwrt
         sed -i '$a src-git NueXini_Packages https://github.com/NueXini/NueXini_Packages.git' feeds.conf.default
         echo "src-git mihomo https://github.com/morytyann/OpenWrt-mihomo.git;main" >> "feeds.conf.default" #添加mihomo
+        lsblk
         
     - name: Update & Install feeds
       working-directory: ./openwrt
