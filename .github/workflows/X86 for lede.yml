@@ -8,7 +8,7 @@
 
 name: lean - x86
 
-#on: 
+on: 
   #release:
     #types: [published]
 
