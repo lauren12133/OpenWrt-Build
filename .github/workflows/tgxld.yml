@@ -11,13 +11,13 @@
 name: lean - x86 - test
 
 #启动方式
-on:
+#on:
   #repository_dispatch:
   #workflow_dispatch:
   #schedule:
     #- cron: 0 4 * * 5
-  watch:
-    types: [started]
+  #watch:
+    #types: [started]
 
 #变量
 env:
