@@ -38,7 +38,7 @@ env:
   UPLOAD_RELEASE: true
   TZ: Asia/Shanghai
 
-工作
+#工作
 jobs:
   build:
     runs-on: ubuntu-22.04
