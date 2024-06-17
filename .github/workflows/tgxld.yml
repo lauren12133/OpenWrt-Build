@@ -11,17 +11,11 @@
 name: lean - x86 - test
 
 #启动方式
-#on: 
-  #release:
-    #types: [published]
-
-  #push:
-    #branches: 
-      #- master
-
+on:
+  #repository_dispatch:
+  #workflow_dispatch:
   #schedule:
-  #  - cron: 0 8 * * 5
-  
+    #- cron: 0 4 * * 5
   watch:
     types: [started]
 
