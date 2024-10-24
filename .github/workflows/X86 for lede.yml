@@ -113,9 +113,9 @@ jobs:
     - name: Update feeds.conf.default
       run: |
         cd openwrt
-        rm -rf feeds.conf.default
-        wget https://raw.githubusercontent.com/lauren12133/OpenWrt-Build/main/feeds.conf.default
-        sed -i '$a src-git NueXini_Packages https://github.com/NueXini/NueXini_Packages.git' feeds.conf.default
+        #rm -rf feeds.conf.default
+        #wget https://raw.githubusercontent.com/lauren12133/OpenWrt-Build/main/feeds.conf.default
+        #sed -i '$a src-git NueXini_Packages https://github.com/NueXini/NueXini_Packages.git' feeds.conf.default
         cat feeds.conf.default
         
     - name: Update & Install feeds
