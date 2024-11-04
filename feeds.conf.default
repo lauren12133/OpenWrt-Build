@@ -11,3 +11,4 @@ src-git helloworld https://github.com/fw876/helloworld.git
 #src-link custom /usr/src/openwrt/custom-feed
 src-git passwall https://github.com/xiaorouji/openwrt-passwall.git
 src-git daed https://github.com/sbwml/luci-app-daed.git
+src-git v2raygeodata https://github.com/sbwml/v2ray-geodata.git
